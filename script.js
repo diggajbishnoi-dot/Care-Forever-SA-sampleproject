@@ -49,3 +49,30 @@ prevBtn.addEventListener("click",() => {
 });
 }
 );
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.querySelector(".navbar");
+
+menuBtn.addEventListener("click", () => {
+    navbar.classList.toggle("open");
+});
+const navLinks = document.querySelectorAll(".navbar ul li a");
+
+navLinks.forEach(link => {
+
+    if(link.href === window.location.href){
+        link.classList.add("active");
+    }
+
+});
+window.addEventListener("scroll", () => {
+
+    const navbar =
+        document.querySelector(".navbar");
+
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
